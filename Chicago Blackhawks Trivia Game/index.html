@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Blackhawks Trivia Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Chicago Blackhawks Trivia Game</h1>
+            <div class="score">Score: <span id="score">0</span></div>
+        </header>
+        <main>
+            <div id="instructions" class="instructions">
+                <h2>How to Play</h2>
+                <p>Welcome to the Chicago Blackhawks Trivia Game! Here are the rules: </p>
+                <ul>
+                    <li> Read the question and select the correct answer from the options provided.</li>
+                    <li>Click "Submit Answer" to check if your answer is correct.</li>
+                    <li>If your answer is incorrect, a clue will be provided. You have three chances to guess correctly.</li>
+                    <li>Points are awarded based on how many attempts it takes to get the correct answer.</li>
+                    <ul>
+                        <li>5 points for the first correct guess.</li>
+                        <li>3 points for the second correct guess.</li>
+                        <li>1 point for the third correct guess.</li>
+                    </ul>
+                    <li>Click "Next" to move to the next question.</li>
+                    <li> Your score will be displayed at the top of the screen.</li>
+                </ul>
+                <button id="start-button" class="btn">Start Game</button>
+            </div>
+            <div id="game-container" class="question-container" style="display: none;">
+                <img id="question-image" src="" alt="Question Image" style="display: none;">
+                <p id="question-text">Question will appear here</p>
+                <div id="answer-buttons" class="btn-container">
+                    <!-- Answer buttons will be generated here -->
+                </div>
+                <div id="message-box" class="message-box"></div>
+                <div id="clue-box" class="message-box clue-box"></div>
+                <p id="clue-text"></p>
+                <button id="submit-button" class="btn">Submit Answer</button>
+                <button id="next-button" class="btn">Next</button>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; Brian Waldschmidt 2024</p>
+        </footer>
+    </div>
+    <script src="scripts/myscripts.js"></script>
+</body>
+
+</html>
