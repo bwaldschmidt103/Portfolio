@@ -1,0 +1,901 @@
+/* Font Definitions */
+/* Core System Fonts */
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 300 700; /* Supports variable weights */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; /* Supports variable weights */
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+/* Decorative Fonts */
+@font-face {
+  font-family: "Spectral";
+  src: url("../fonts/Spectral.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex Brush";
+  src: url("../fonts/AlexBrush.ttf") format("truetype");
+}
+/* Color Variables */
+/* Typography Variables */
+/* Mixins */
+/* Utility Classes */
+.spaced {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: none; /* Completely removes the element when hidden */
+}
+
+.spaced-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: none; /* Use only when necessary */
+}
+
+.spaced-lg {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.padded {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: none;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+/* Universal Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F4; /* Subtle background for all pages */
+  color: #7B61FF; /* Default text color */
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  box-sizing: border-box; /* Properly includes padding and border */
+  padding-top: 30px; /* Prevent navbar overlap */
+}
+
+main {
+  max-width: 100%; /* Prevents horizontal overflow caused by scrollbars */
+  margin: 0 auto; /* Centers the main content */
+  padding: 20px; /* Adds spacing inside the content */
+}
+
+/* General Typography */
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: bold; /* Optional for headings */
+}
+
+.site-title {
+  font-family: "Cormorant Garamond", serif;
+  color: #FFFFFF; /* White text color */
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: left; /* Aligns text to the left */
+  margin: 0;
+  font-style: normal;
+  letter-spacing: 0.5px; /* Adds spacing for readability */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Adds depth to the text */
+  margin-left: 10px; /* Aligns with the logo */
+}
+
+button {
+  font-family: "Nunito", sans-serif;
+}
+
+.tagline {
+  font-family: "Alex Brush", cursive;
+  font-size: 1.5em;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  min-height: 100px; /* Sets a minimum height for the navbar */
+  padding: 10px 20px; /* Adds padding around the navbar */
+  position: fixed; /* Fixes the navbar to the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the navbar stretches across the page */
+  background-color: #6A5ACD; /* Mystic purple */
+  height: 60px; /* Example height, adjust as needed */
+  box-sizing: border-box; /* Includes padding in width calculations */
+  z-index: 1000; /* Keeps the navbar above all other content */
+  transition: transform 0.3s ease; /* Smooth hide/show effect */
+  /* The container class wraps navbar content */
+}
+.navbar .hidden {
+  transform: translateY(-100%); /* Moves the navbar off-screen */
+}
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns items to the left */
+  width: auto; /* Allows the container to adjust based on content */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Centers the container */
+  margin-left: 0; /* Aligns to the left */
+  box-sizing: border-box;
+  flex: 0; /* Prevents the logo from stretching */
+}
+.navbar .logo {
+  max-height: 80px; /* Sets a maximum height for the logo */
+  max-width: 100px; /* Restricts the maximum width */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Prevents inline space issues */
+  margin: 0; /* Removes default margin */
+}
+.navbar .nav-links {
+  display: flex;
+  justify-content: center; /* Centers the links */
+  align-items: center; /* Vertically aligns links */
+  flex: 1; /* Allows the links to take up available space */
+  list-style: none; /* Removes bullet points */
+  margin: 0; /* Resets any unwanted margins */
+  padding: 0; /* Removes unnecessary padding */
+}
+.navbar .nav-links .active {
+  font-weight: bold;
+  color: #FFC0CB; /* Example: rose quartz pink */
+}
+.navbar .nav-links a {
+  text-decoration: none; /* Removes underline */
+  color: #FFFFFF; /* Default text color */
+  padding: 10px 15px; /* Adds padding around the links */
+  font-weight: bold; /* Makes the text bold */
+  font-size: 1rem; /* Sets font size */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px;
+}
+.navbar .nav-links a:hover {
+  background-color: #FFD700;
+}
+.navbar .button-container {
+  flex: 0; /* Prevents growth */
+  display: flex;
+  align-items: center; /* Vertically aligns buttons */
+  gap: 10px; /* Adds space between buttons */
+}
+.navbar .login-button, .navbar .signup-button {
+  color: #FFFFFF; /* Makes the text white */
+  background-color: transparent; /* Removes the gray background */
+  border: none; /* Removes any borders */
+  font-weight: bold; /* Optional: Makes the text stand out */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+}
+.navbar .login-button:hover, .navbar .signup-button:hover {
+  text-decoration: underline; /* Adds an underline effect on hover */
+}
+
+/* Headline Image Container */
+.headline-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.headline-image {
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+  display: block;
+  border-radius: 10px;
+  z-index: 1; /* Ensures it sits above lower elements */
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #FFC0CB;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.hero-section h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  color: #7B61FF;
+  margin-bottom: 10px;
+}
+.hero-section p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  color: #F4F4F4;
+  margin-bottom: 20px;
+}
+.hero-section .explore-button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #7B61FF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.hero-section .explore-button:hover {
+  background-color: #FFD700;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Product Showcase Styling */
+.product-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: #F4F4F4; /* Subtle background for contrast */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Use the mixin for consistency */
+}
+.product-showcase .product-card {
+  background-color: #FFFFFF;
+  border: 2px solid #FFC0CB;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  display: flex;
+  flex-direction: column; /* Stacks child elements vertically */
+  justify-content: space-between; /* Ensures spacing between elements */
+  align-items: center;
+  height: auto; /* Allows for flexible height */
+  min-height: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px; /* Adds space above each card */
+  margin-bottom: 20px; /* Adds space below each card */
+}
+.product-showcase .product-card:hover {
+  transform: scale(1.02); /* Slight zoom for interactivity */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  /* Stronger shadow */
+}
+.product-showcase .product-card h3 {
+  margin: 10px 0;
+  color: #7B61FF;
+}
+.product-showcase .product-card p {
+  margin: 10px 0;
+  color: #50C878;
+}
+.product-showcase .product-card .product-image {
+  width: 100px;
+  height: auto;
+  margin: 0 auto; /* Centers the image horizontally */
+}
+.product-showcase .product-card .button-container {
+  margin-top: auto;
+  text-align: center; /* Centers the button horizontally */
+  display: flex;
+  justify-content: center; /* Centers button horizontally */
+  align-items: flex-end; /* Ensures consistent bottom alignment */
+  margin-top: auto; /* Pushes button down */
+}
+.product-showcase .product-card .add-to-cart {
+  margin: 10px auto 0 auto; /* Centers the button */
+  background-color: #7B61FF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Use the mixin for consistent shadows */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.product-showcase .product-card .add-to-cart:hover {
+  background-color: #FFC0CB;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Heading Styling */
+h2 {
+  text-align: center;
+  color: #FF69B4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.hero-header {
+  background-color: #F4F4F4; /* Neutral background */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.about-mystic-minerals {
+  text-align: center; /* Centers the text */
+  max-width: 800px; /* Restricts width for readability */
+  margin: 30px auto; /* Centers the section */
+  padding: 20px; /* Adds spacing inside the section */
+  font-size: 1.2rem; /* Makes the text inviting and readable */
+  line-height: 1.6; /* Improves readability */
+  color: #333333; /* Neutral dark gray text color */
+}
+.about-mystic-minerals p {
+  margin: 0; /* Removes default paragraph margin */
+  font-family: "Georgia", serif; /* Adds elegance to the text */
+}
+.about-mystic-minerals strong {
+  color: #6A5ACD; /* Highlights your brand name in mystic purple */
+}
+
+/* Crystal Uses Section */
+#crystal-uses {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 20px; /* Adds space above the section */
+}
+#crystal-uses h2 {
+  font-size: 2rem;
+  color: #50C878; /* Match your theme */
+}
+#crystal-uses p {
+  font-size: 1em;
+  color: #7B61FF;
+  line-height: 1.5; /* Improves readability */
+}
+
+/* Crystal Card Section */
+.scroll-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: auto;
+  overflow-x: auto; /* Enables scrolling */
+  margin-top: 20px; /* Adds space above the section */
+}
+
+.scroll-arrow {
+  background-color: #FFC0CB; /* Match theme */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.scroll-arrow:hover {
+  background-color: #50C878;
+}
+
+.scroll-content {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Space between cards */
+  padding: 20px 30px; /* Add padding on left and right edges */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  width: 100%; /* Full width of the container */
+}
+
+.crystal-card {
+  background-color: #F4F4F4; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  width: 360px; /* Reduced width to fit more cards */
+  height: auto; /* Dynamic height to fit content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle depth */
+  text-align: left;
+  overflow: visible; /* Prevents overflow issues */
+  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+}
+.crystal-card .text-content {
+  z-index: 1; /* Ensures text is above the card background */
+}
+.crystal-card .text-content h3 {
+  color: #50C878;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.crystal-card .text-content p {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+.crystal-card .crystal-image {
+  width: 100%; /* Fits the width of the card */
+  height: 150px; /* Fixed height for consistency */
+  object-fit: cover; /* Maintains aspect ratio while cropping excess */
+  border-radius: 8px; /* Matches card corners */
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Educational Content Section */
+.educational-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+.educational-content .educational-card {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  width: calc(33.33% - 20px);
+  flex: 0 0 calc(33.33% - 20px);
+  margin-top: 20px; /* Adds space above each card */
+  margin-bottom: 20px; /* Adds space below each card */
+}
+.educational-content .educational-card .card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.educational-content .educational-card .card-text {
+  margin-top: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #7B61FF;
+}
+.educational-content .educational-card .read-more-btn {
+  margin-top: 10px;
+  background-color: #7B61FF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.educational-content .educational-card .read-more-btn:hover {
+  background-color: #FFC0CB;
+}
+.educational-content .educational-card .hidden-content {
+  display: none;
+  margin-top: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  color: #F4F4F4;
+  text-align: left;
+}
+.educational-content .educational-card .visible-content {
+  display: block; /* Overrides hidden content */
+}
+
+/* Content Navigation Section */
+.content-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px; /* Spacing below educational cards */
+  gap: 20px; /* Space between elements */
+}
+.content-navigation .navigation-arrow {
+  background-color: #7B61FF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.content-navigation .navigation-arrow:hover {
+  background-color: #FFC0CB;
+}
+.content-navigation .navigation-buttons {
+  display: flex;
+  gap: 10px;
+}
+.content-navigation .navigation-buttons .dummy-button {
+  background-color: #FFFFFF;
+  color: #7B61FF;
+  border: 1px solid #7B61FF;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.content-navigation .navigation-buttons .dummy-button:hover {
+  background-color: #7B61FF;
+  color: #FFFFFF;
+}
+
+/* Contact Us Section */
+.contact-us {
+  text-align: center;
+  max-width: 800px;
+  margin: 30px auto;
+}
+.contact-us .contact-heading {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.contact-us .contact-message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Contact Image Section */
+.contact-image-section {
+  text-align: center;
+  margin: 30px auto;
+}
+.contact-image-section .contact-image {
+  width: 50%;
+  max-width: 500px;
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+/* Contact Information */
+.contact-info {
+  text-align: center;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 30px auto;
+}
+.contact-info .contact-form-section {
+  max-width: 700px;
+  padding: 20px;
+}
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+.contact-info .company-note {
+  font-style: italic;
+  color: #6A5ACD;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact-form-section .customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form-section .customer-form label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #6A5ACD;
+}
+.contact-form-section .customer-form input, .contact-form-section .customer-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.contact-form-section .customer-form textarea {
+  resize: none;
+  height: 120px;
+}
+.contact-form-section .customer-form .submit-button {
+  background-color: #6A5ACD;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form-section .customer-form .submit-button:hover {
+  background-color: #5A4ACD;
+}
+
+/* Human Verification Section */
+.human-verification-section {
+  text-align: center;
+  margin-top: 20px;
+}
+.human-verification-section .human-verification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.human-verification-section .human-verification input[type=checkbox] {
+  margin: 0;
+}
+.human-verification-section .human-verification label {
+  font-size: 1rem;
+  color: #333333;
+}
+
+/* Dummy Links Section */
+.dummy-links-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three evenly spaced columns */
+  gap: 20px; /* Adds horizontal and vertical spacing */
+  max-width: 900px; /* Restricts width for alignment */
+  margin: 30px auto; /* Centers the section on the page */
+  padding: 20px 0; /* Adds top and bottom padding */
+  background-color: #f4f4f4; /* Light gray background for contrast */
+  border: none; /* Removes the border */
+}
+
+.link-column {
+  text-align: center; /* Aligns text to the left */
+  font-size: 1rem;
+}
+.link-column ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+.link-column li {
+  margin-bottom: 10px; /* Adds vertical space between links */
+}
+.link-column a {
+  color: #6A5ACD; /* Mystic purple hyperlink color */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease;
+}
+.link-column a:hover {
+  color: #544ACD; /* Darker shade on hover */
+}
+
+/* Global Footer Styling */
+.page-container {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  min-height: 100vh; /* Ensures the container takes full viewport height */
+}
+
+.content {
+  flex: 1; /* Expands to fill remaining space above the footer */
+}
+
+#main-footer {
+  margin-top: 20px; /* Space above the footer */
+  color: #6A5ACD; /* Mystic purple */
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  border-top: 4px solid #ffc0cb;
+  background-color: #F4F4F4; /* Light gray background */
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styling */
+@media (min-width: 1024px) {
+  .logo {
+    max-width: 120px; /* Slightly larger for larger screens */
+  }
+}
+@media (max-width: 768px) {
+  /* Headline Section Adjustments */
+  .headline-image-container {
+    margin: 10px auto;
+  }
+  /* Hero Section Adjustments */
+  .hero-section {
+    padding: 20px 10px; /* Adjust spacing for smaller screens */
+  }
+  .hero-section h1 {
+    font-size: 2rem; /* Scale down heading for smaller screens */
+  }
+  .hero-section p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+  /* Explore Button Adjustments */
+  .explore-button {
+    padding: 8px 16px;
+  }
+  /* Crystal Card Adjustments */
+  .crystal-card {
+    width: 300px; /* Fits better on tablets */
+    padding: 15px; /* Compact padding */
+    margin: 0 auto; /* Centers card */
+  }
+  .scroll-content {
+    max-width: 640px; /* Display only 2 cards at once for smaller screens */
+  }
+  /* Crystal Uses Section Adjustments */
+  #crystal-uses {
+    padding: 20px 10px;
+  }
+  #crystal-uses h2 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+  .educational-content {
+    justify-content: center; /* Center-align on smaller screens */
+  }
+  .educational-card {
+    width: calc(50% - 20px);
+    flex: 0 0 calc(50% - 20px);
+    margin: 0 auto; /* Centers card */
+  }
+  .about-mystic-minerals {
+    padding: 10px; /* Reduces padding for smaller screens */
+    font-size: 1rem; /* Scales down font size for readability */
+    line-height: 1.4; /* Adjusts line spacing */
+  }
+  .contact-us contact-heading {
+    font-size: 2rem; /* Reduces heading size for tablets */
+  }
+  .contact-us .contact-message {
+    font-size: 1rem; /* Scales down paragraph text */
+  }
+  .contact-image-section .contact-image {
+    width: 80%; /* Makes the image more compact */
+  }
+  .contact-info,
+  .contact-form-section {
+    max-width: 90%;
+    padding: 15px; /* Reduce padding */
+  }
+  .customer-form label {
+    font-size: 1rem; /* Adjust label size */
+  }
+  .customer-form input, .customer-form textarea {
+    padding: 8px; /* Reduces input padding */
+  }
+  .customer-form textarea {
+    height: 100px; /* Adjusts height for smaller screens */
+  }
+  .customer-form .submit-button {
+    font-size: 0.9rem; /* Makes button text compact */
+    padding: 10px 15px; /* Adjusts button size */
+  }
+  .human-verification-section .human-verification {
+    flex-direction: column; /* Stacks checkbox and label vertically */
+    gap: 5px; /* Reduces spacing */
+  }
+  .dummy-links-section {
+    grid-template-columns: repeat(2, 1fr); /* Reduces to two columns for smaller screens */
+  }
+  .link-column {
+    font-size: 0.9rem; /* Adjusts link font size */
+  }
+  .navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .product-card {
+    height: auto; /* Allows for flexible height */
+  }
+  .product-image {
+    width: 90px; /* Scales down the image for smaller screens */
+  }
+  .container {
+    padding: 0 10px;
+  }
+  .navigation-arrow {
+    width: 30px; /* Smaller arrows */
+    height: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .educational-card {
+    width: 100%; /* 1 card per row */
+    flex: 0 0 100%;
+    margin: 0 auto; /* Centers card */
+  }
+  .about-mystic-minerals {
+    max-width: 90%; /* Adjust width for smaller screens */
+    font-size: 1rem; /* Slightly smaller text */
+    padding: 15px;
+  }
+  .contact-us .contact-heading {
+    font-size: 1.8rem; /* Scales heading for phones */
+  }
+  .contact-us .contact-message {
+    font-size: 0.9rem; /* Reduces paragraph text */
+  }
+  .contact-image-section .contact-image {
+    width: 100%; /* Makes the image fully responsive */
+  }
+  .dummy-links-section {
+    grid-template-columns: repeat(1, 1fr); /* Single column on phones */
+    gap: 20px; /* Adds breathing room */
+  }
+  .link-column {
+    font-size: 0.8rem; /* Adjusts link font size further */
+  }
+  .navbar {
+    flex-wrap: wrap; /* Ensures proper layout on smaller screens */
+  }
+  .headline-image-container {
+    margin: 10px auto;
+  }
+  .headline-image {
+    width: 90%; /* Shrinks image for smaller screens */
+  }
+  .hero-section {
+    padding: 15px 5px; /* Compact padding for phones */
+  }
+  .product-card {
+    width: 90%; /* Adapts to single column on phones */
+    height: auto; /* Allows for flexible height */
+    margin: 0 auto; /* Centers cards */
+  }
+  .product-image {
+    width: 90px; /* Scales down the image for smaller screens */
+  }
+  .container {
+    padding: 0 5px;
+  }
+  .crystal-card {
+    width: 90%; /* Adapts to single column on phones */
+    margin: 0 auto; /* Centers cards */
+  }
+  .crystal-image {
+    height: 100px; /* Smaller images */
+  }
+  .human-verification {
+    gap: 5px; /* Reduce spacing */
+    flex-direction: column; /* Stack elements vertically */
+  }
+}
+@media (max-width: 480px) and (hover: none) {
+  .product-card:hover {
+    transform: none; /* Disables zoom effect for touch devices */
+  }
+  .add-to-cart:hover {
+    transform: none;
+    background-color: #7B61FF; /* Keeps consistent styling */
+  }
+}/*# sourceMappingURL=main.css.map */

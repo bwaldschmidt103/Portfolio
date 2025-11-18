@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Mineral Marketplace (Contact Page)</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="logo-container">
+            <img src="../images/mystic-mineral-marketplace.png" alt="Mystic Mineral Marketplace Logo" class="logo">
+            <h1 class="site-title">Mystic Mineral Marketplace</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./crystal-insights.html">Crystal Insights</a></li>
+            <li><a href="./contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="button-container">
+            <button class="login-button">Login</button>
+            <button class="signup-button">Sign Up</button>
+          </div>
+    </nav>
+
+    <main>
+
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h2 class="contact-heading">Contact Us</h2>
+            <p class="contact-message">
+                We're here to help! Whether you have questions about our crystals, need assistance with your order, or just want to connect, feel free to reach out to us. Your journey to serenity and balance starts here!
+            </p>
+        </section>
+      
+        <!-- Contact Image Section -->
+        <section class="contact-image-section">
+            <img src="../images/contact-us.png" alt="Contact support team for Mystic Mineral Marketplace" class="contact-image">
+
+        </section>
+      
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:support@crystalharmony.com">support@crystalharmony.com</a></p>
+            <p><strong>Phone Number:</strong> <a href="tel:+18001234567">+1 (800) 123-4567</a></p>
+
+            <p><strong>Address:</strong> <span class="address">123 Serenity Street, Balance City, Crystal State, 54321</span></p>
+
+            <p class="company-note">
+                Thank you for choosing Crystal Harmony! We're dedicated to helping you find tranquility, balance, and positivity in your life. Feel free to reach out to us, and we'll be delighted to assist you.
+            </p>
+        </div>
+      
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <form class="customer-form" action="#" method="POST">
+                <p class="form-note">This form is for demonstration purposes only.</p>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" area-label="Name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" area-label="Email" required>
+        
+                <label for="message">Comment or Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
+        
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <!-- Human Verification Section -->
+            <div class="human-verification-section">
+                <div class="human-verification">
+                    <input type="checkbox" id="human-check" name="human-check" required aria-labelledby="human-label">
+                    <label id="human-label" for="human-check">I confirm that I am human</label>
+                </div>
+                
+            </div>
+        </section>
+        <section class="dummy-links-section">
+            <div class="link-column">
+              <ul>
+                <li><a href="#">CrystalCove.com</a></li>
+                <li><a href="#">GemstoneGarden.net</a></li>
+                <li><a href="#">QuartzQuest.org</a></li>
+                <li><a href="#">AmethystAdventures.com</a></li>
+                
+              </ul>
+            </div>
+            <div class="link-column">
+              <ul>
+                <li><a href="#">RoseQuartzRealm.net</a></li>
+                <li><a href="#">MineralMagnet.com</a></li>
+                <li><a href="#">CitrineTreasure.org</a></li>
+                <li><a href="#">OpalOdyssey.com</a></li>
+                <li><a href="#">GemGlowGallery.net</a></li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <ul>
+                <li><a href="#">TigerEyeTrails.com</a></li>
+                <li><a href="#">LapisLuster.net</a></li>
+                <li><a href="#">GemstoneGazette.net</a></li>
+              </ul>
+            </div>
+          </section>
+          
+    </main>
+      
+    <footer id="main-footer">
+        <p>&copy; 2025 Brian Waldschmidt. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let lastScrollPosition = 0;
+        const navbar = document.getElementById('navbar');
+      
+        window.addEventListener('scroll', () => {
+          const currentScrollPosition = window.pageYOffset;
+      
+          if (currentScrollPosition > lastScrollPosition) {
+            // Scrolling down
+            navbar.classList.add('hidden');
+          } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+          }
+      
+          lastScrollPosition = currentScrollPosition;
+        });
+      </script>
+      
+</body>
+</html>
