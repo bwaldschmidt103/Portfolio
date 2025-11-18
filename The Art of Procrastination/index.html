@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Procrastination</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <audio id="myAudio" src="./sounds/buzzer.mp3"></audio>
+    
+    <header>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#excuses-section">Excuses</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#panic">Panic Mode</a></li>
+                <li><a href="#guide">Survival Guide</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to Our Site</h1>
+        <p>Your journey starts here.</p>
+    </header>
+
+    <section id="intro" class="parallax">
+        <div class="parallax-bg"></div> <!-- 🔹 Background element -->
+        <div class="intro-content">
+            <h2>Mastering the Fine Art of Doing Absolutely Nothing</h2>
+            <p>Step 1: Open your laptop. Step 2: Stare at the screen. Step 3: Convince yourself that watching one more video is "research."</p>
+        </div>
+    </section>
+
+    <section class="video-section" id="excuses-section">
+        <video id="video-bg-elem" preload="auto" autoplay loop muted>
+            <source src="./images/sorry.mp4" type="video/mp4">
+            Video not supported
+        </video>
+        <div class="overlay">
+            <h2>Top Excuses</h2>
+            <figcaption>Tap the button to see a legendary procrastination excuse:</figcaption>
+            <div id="button-container">
+                <button id="generate-excuses-btn">Generate Excuses</button>
+            </div>
+            <p id="excuse-text"></p>
+        </div>
+    </section>
+
+
+    <section id="methods">
+        <h2>Procrastination Methods</h2>
+        <p>Swipe through legendary distractions procrastinators use to avoid work.</p>
+    
+        <figure class="image-gallery">
+            <!-- Large Image Display -->
+            <img id="largeImage" src="images/netflix-binge.png" alt="Netflix binge marathon 🍿">
+             <h2 id="caption">Netflix binge marathon 🍿</h2>
+        
+            <!-- Thumbnail Images -->
+            <div class="thumbnails">
+                <img src="images/netflix-binge.png" alt="Netflix binge marathon 🍿" onclick="changeImage(this)">
+                <img src="images/snack-raids.png" alt="Endless snack raids 🍕" onclick="changeImage(this)">
+                <img src="images/cleaning-spree.png" alt="Cleaning everything *but* your work 🧹" onclick="changeImage(this)">
+                <img src="images/sudden-hobby.png" alt="Suddenly picking up a new hobby 🎸" onclick="changeImage(this)">
+                <img src="images/meme-diving.png" alt="Scrolling memes for research purposes 🤔" onclick="changeImage(this)">
+            </div>
+        </figure>
+    </section>
+    
+    <aside id="panic">
+        <h2>Last-Minute Panic Mode</h2>
+        <p>Nothing boosts productivity like an approaching deadline!</p>
+        <button id="start-btn">Start Countdown</button>
+        <button id="stop-btn">Stop Timer</button>
+        <button id="reset-btn">Reset Timer</button>
+        <div id="countdown-timer">00:00:10</div>
+    </aside>
+
+    <article id="guide">
+        <h2>Survival Guide</h2>
+        <h3>How to act like you've had everything under control:</h3>
+        <ul>
+            <li>Give a confident nod when questioned.</li>
+            <li>Mutter something about "workflow optimization."</li>
+            <li>Pull up random spreadsheets for dramatic effect.</li>
+            <li>Carry an empty clipboard—it instantly makes you look busy and important.</li>
+            <li>Nod thoughtfully when someone explains something complex, then say, "Interesting... I'll circle back on that."</li>
+        </ul>
+        <div id="image-container">
+        <img src="images/survival-guide.png" alt="A humorous illustration of someone barely holding it together, pretending to have everything under control." id="info">
+        </div>
+        <ul>
+            <li>Always keep a coffee cup nearby, whether or not there's coffee in it—people respect a caffeine-fueled thinker.</li>
+            <li>If caught off-guard, quickly mumble about “shifting priorities” and walk briskly in a random direction.</li>
+            <li>Never admit you don’t know the answer—just say, “That’s a great question. Let’s get some cross-functional alignment on it.”</li>
+            <li>Use the phrase “Let’s not reinvent the wheel” whenever someone suggests something ambitious.</li>
+            <li>Randomly mention “data-driven insights” and “machine learning”—it’ll make you sound tech-savvy.</li>
+        </ul>
+    </article>
+
+    <footer id="main-footer">
+        <p>&copy; 2025 Brian Waldschmidt. All rights reserved.</p>
+    </footer>
+
+    <script src="./scripts/scrolling.js"></script>
+    <script src="./scripts/parallax.js"></script>
+    <script src="./scripts/changeImage.js"></script>
+    <script src="./scripts/excuseGenerator.js"></script>
+    <script src="./scripts/panicMode.js"></script>
+</body>
+</html>
