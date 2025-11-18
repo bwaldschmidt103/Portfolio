@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Woodland Waters Coffee</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../images/woodland-waters-coffee.jpeg" alt="Woodland Waters Coffee Logo" class="logo">
+            <nav>
+                <a href="../index.html" aria-label="Go to Home Page">Home</a>
+                <a href="./menu.html" aria-label="Go to Menu Page">Menu</a>
+                <a href="./contact.html" aria-label="Go to Contact Page">Contact</a>
+            </nav>
+        </div>
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Reach out for any inquiries, feedback, or just to say hello.</p>
+    </header>
+    <main>
+        <section class ="contact-page">
+            <div class="contact-left">
+                <img src="../images/contact-page.png" alt="Woodland Waters Coffee Contact Page Illustration" class="contact-image">
+            </div>
+            <div class="contact-right">
+                <form>
+                    <!-- Full Name -->
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Your Full Name" required>
+
+                    <!-- Email -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" pattern=".+@.+\..+" required>
+
+                    <!-- Phone Number -->
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="tel" id="phone-number" name="phone-number" placeholder="Your Phone Number" pattern="[0-9]{10}" required>
+                    
+                    <!-- Message -->
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                    <!-- Submit Button -->
+                    <button type="submit" aria-label="Send message">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>@ 2025 Woodland Waters Coffee</p>
+    </footer>
+</body>
+
+</html>
